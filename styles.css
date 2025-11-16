@@ -87,26 +87,25 @@ body{
   color:#fff;
 }
 
-/* =============== 施工実績・床材紹介 =============== */
-.gallery{
+/* =============== 施工実績 =============== */
+#works .gallery{
   display:grid;
   grid-template-columns:1fr;
   gap:20px;
 }
-
-/* 施工写真（最初の画像） */
-.gallery img:first-child {
+#works .gallery img{
   width:100%;
   height:300px;
   object-fit:cover;
   border-radius:8px;
+  display:block;
 }
 
-/* 床材紹介の画像 */
-.gallery img.floor {
-  width:200px;        /* 小さめ */
+/* =============== 床材紹介 =============== */
+#materials .svc img{
+  width:200px;        /* 施工写真より小さめ */
   max-width:250px;
-  height:auto;        /* 縦横比維持 */
+  height:auto;
   object-fit:cover;
   border-radius:8px;
   display:block;
@@ -146,6 +145,21 @@ body{
   border-bottom:none;
 }
 
+/* =============== サービス内容、カード類 =============== */
+.cards, .grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+}
+
+.svc, .card{
+  background:#fff;
+  padding:16px;
+  border-radius:8px;
+  flex:1 1 calc(33.333% - 16px);
+  box-shadow:0 2px 4px rgba(0,0,0,0.05);
+}
+
 /* =============== お問い合わせ余白調整 =============== */
 .contact p{
   padding-left:12px;
@@ -165,14 +179,17 @@ body{
     padding:12px 20px;
   }
   .nav-toggle{display:block}
+
+  .svc, .card{
+    flex:1 1 100%;
+  }
 }
 
 @media(max-width:560px){
   .brand h1{font-size:26px}
   .hero-img{height:240px}
 
-  /* 床材紹介画像をスマホでも小さめに維持 */
-  .gallery img.floor {
+  #materials .svc img{
     width:70%;
     max-width:200px;
   }
