@@ -1,6 +1,6 @@
-/* ================================
-   ブラウン薄めプロカラー版
-================================ */
+/* ======================
+   カラーテーマ
+====================== */
 :root{
   --accent:#7A5A3D;
   --main:#D7B894;
@@ -10,7 +10,10 @@
   --maxw:1100px;
 }
 
-*{box-sizing:border-box}
+/* ======================
+   基本設定
+====================== */
+*{box-sizing:border-box;}
 body{
   font-family:system-ui,-apple-system,"Hiragino Kaku Gothic ProN","Noto Sans JP",Segoe UI,Roboto,sans-serif;
   color:var(--text);
@@ -18,12 +21,15 @@ body{
   background:var(--bg);
   line-height:1.6;
 }
+.container{
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:24px;
+}
 
-.container{max-width:var(--maxw);margin:0 auto;padding:24px}
-
-/* ============================
+/* ======================
    ヘッダー
-============================ */
+====================== */
 .site-header{
   background:#fff;
   border-bottom:1px solid #e6e6e6;
@@ -37,18 +43,22 @@ body{
   gap:16px;
 }
 
+/* ★会社名を大きくした */
 .brand h1{
   margin:8px 0 0;
-  font-size:32px;  /* ←会社名を大きく */
+  font-size:26px;
   font-weight:700;
-  color:var(--accent);
+  color:var(--main);
 }
 .brand .sub{
   margin:0;
-  font-size:14px;
+  font-size:13px;
   color:var(--text);
 }
 
+/* ======================
+   ナビ（PC）
+====================== */
 .nav{
   margin-left:auto;
   display:flex;
@@ -61,14 +71,16 @@ body{
   padding:8px 10px;
   border-radius:6px;
 }
-.nav a.btn{border:1px solid var(--main)}
+.nav a.btn{border:1px solid var(--main);}
 .nav a.btn.primary{
   background:var(--accent);
   color:#fff;
   border:none;
 }
 
-/* ハンバーガー */
+/* ======================
+   ハンバーガー（スマホ）
+====================== */
 .nav-toggle{
   display:none;
   background:none;
@@ -78,10 +90,28 @@ body{
   margin-left:auto;
 }
 
-/* ============================
-   HERO
-============================ */
-.hero{position:relative;overflow:hidden}
+/* ★スマホメニュー → 下に縦並び表示 */
+.mobile-nav{
+  display:none;
+  flex-direction:column;
+  background:#fff;
+  padding:10px 20px;
+  border-top:1px solid #ddd;
+}
+.mobile-nav a{
+  padding:12px 0;
+  border-bottom:1px solid #eee;
+  color:var(--text);
+  text-decoration:none;
+}
+.mobile-nav.open{
+  display:flex;
+}
+
+/* ======================
+   ヒーロー
+====================== */
+.hero{position:relative;overflow:hidden;}
 .hero-img{
   width:100%;
   height:360px;
@@ -95,36 +125,52 @@ body{
   flex-direction:column;
   justify-content:center;
   color:#fff;
+  text-align:left;
   padding:40px;
 }
-.hero-inner h2{font-size:32px;margin:0 0 12px}
+.hero-inner h2{
+  font-size:32px;
+  margin:0 0 12px;
+}
+.hero-inner p{
+  margin:0 0 16px;
+  /* ★左余白追加 */
+  padding-left:6px;
+}
 
-/* ============================
+.btn{
+  display:inline-block;
+  background:var(--main);
+  color:var(--text);
+  padding:10px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  border:1px solid rgba(0,0,0,0.06);
+}
+.btn.primary{background:var(--accent);color:#fff;border:none;}
+.btn.phone{background:var(--main);color:var(--text);}
+
+/* ======================
    理由
-============================ */
-.reasons{padding:36px 0}
-.cards{display:flex;gap:16px;flex-wrap:wrap}
+====================== */
+.reasons{padding:36px 0;}
+.reasons h3{margin-bottom:18px;}
+.cards{display:flex;gap:16px;flex-wrap:wrap;}
 .card{
   background:var(--sub);
   padding:18px;
   border-radius:8px;
   flex:1;
   min-width:220px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.04)
+  box-shadow:0 2px 6px rgba(0,0,0,0.04);
 }
 
-/* ============================
-   事業内容
-============================ */
-.services{padding:36px 0}
-.grid{
-  display:grid;
-  gap:16px;
-}
-.grid-6{
-  grid-template-columns:repeat(3,1fr);
-}
-
+/* ======================
+   サービス
+====================== */
+.services{padding:36px 0;background:transparent;}
+.grid{display:grid;gap:16px;}
+.grid-6{grid-template-columns:repeat(3,1fr);}
 .svc{
   background:var(--sub);
   padding:18px;
@@ -138,22 +184,21 @@ body{
   margin-bottom:8px;
 }
 
-/* ============================
-   施工写真（大きめ）
-============================ */
-.works{padding:36px 0}
+/* ===========================
+   施工写真（ギャラリー）
+=========================== */
+.works{padding:36px 0;}
 
 .gallery{
   display:grid;
   grid-template-columns:1fr;
   gap:16px;
-  padding-left:8px;   /* ← 左に余白を追加 */
-  padding-right:8px;
+  padding-left:10px; /* ★左に隙間追加 */
 }
 
 .gallery img{
   width:100%;
-  height:300px;
+  height:320px; /* ★より大きく */
   object-fit:cover;
   border-radius:8px;
   box-shadow:0 3px 6px rgba(0,0,0,0.2);
@@ -161,56 +206,69 @@ body{
 
 .gallery figcaption{
   font-size:14px;
+  color:var(--text);
   margin-top:6px;
   text-align:left;
 }
 
-/* PC */
 @media(min-width:900px){
-  .gallery{grid-template-columns:repeat(2,1fr)}
-  .gallery img{height:260px}
+  .gallery{grid-template-columns:repeat(2,1fr);}
+  .gallery img{height:260px;}
 }
 
-/* ============================
-   会社概要（柔らかい枠）
-============================ */
-.company{
-  padding:32px;
+/* ======================
+   会社概要（横文字・枠あり）
+====================== */
+.company-card{
   background:#fff;
-  border-radius:12px;
-  border:1px solid #d8c9b8;
-  box-shadow:0 2px 6px rgba(0,0,0,0.06);
-  margin-bottom:36px;
+  border:1px solid #e3d7c9;
+  padding:20px;
+  border-radius:8px;
+  margin-top:20px;
 }
 
-.profile{
-  width:100%;
-  border-collapse:collapse;
+.company-card .row{
+  display:flex;
+  flex-direction:row;
+  padding:10px 0;
+  border-bottom:1px solid #eee;
 }
 
-.profile th,
-.profile td{
-  padding:12px 10px;
-  border-bottom:1px solid #e8e1d8;
+.company-card .label{
+  width:110px;
+  font-weight:600;
+  color:#5b4635;
 }
 
-.profile tr:last-child td{border-bottom:none}
+.company-card .value{
+  flex:1;
+  color:#4d4d4d;
+  line-height:1.7;
+}
 
-/* ============================
+@media(max-width:600px){
+  .company-card .row{flex-direction:column;}
+  .company-card .label{margin-bottom:4px;}
+}
+
+/* ======================
    お問い合わせ
-============================ */
-.contact{padding:36px 0;display:grid;grid-template-columns:1fr 300px;gap:24px}
-
-.contact p.desc{
-  margin-left:8px; /* ←左余白追加 */
+====================== */
+.contact{
+  padding:36px 0;
+  display:grid;
+  grid-template-columns:1fr 300px;
+  gap:24px;
 }
-
 .contact-form{
   background:var(--sub);
   padding:18px;
   border-radius:8px;
 }
-
+.contact-form label{
+  display:block;
+  margin-bottom:12px;
+}
 .contact-form input,
 .contact-form textarea{
   width:100%;
@@ -218,10 +276,20 @@ body{
   border:1px solid #e6e6e6;
   border-radius:6px;
 }
+.form-note{
+  font-size:13px;
+  color:var(--text);
+}
+.contact-side{
+  background:var(--sub);
+  padding:18px;
+  border-radius:8px;
+  height:fit-content;
+}
 
-/* ============================
+/* ======================
    フッター
-============================ */
+====================== */
 .site-footer{
   background:#4B3A2A;
   color:#fff;
@@ -234,43 +302,17 @@ body{
   text-align:center;
 }
 
-/* ============================
-   スマホ用（ハンバーガー）
-============================ */
+/* ======================
+   レスポンシブ
+====================== */
 @media(max-width:900px){
-
-  .nav{
-    display:none;
-    flex-direction:column;   /* ←縦並び */
-    width:100%;
-    background:#fff;
-    padding:16px 0;
-    text-align:center;
-    border-top:1px solid #e6e6e6;
-  }
-
-  .nav a{
-    padding:14px 0;
-    width:100%;
-  }
-
-  .nav.open{
-    display:flex;  /* ←下にバーっと出る形 */
-  }
-
-  .nav-toggle{
-    display:block;
-  }
-
-  .grid-6{
-    grid-template-columns:repeat(2,1fr);
-  }
+  .grid-6{grid-template-columns:repeat(2,1fr);}
+  .contact{grid-template-columns:1fr;}
+  .nav{display:none;}
+  .nav-toggle{display:block;}
 }
-
-/* スマホ小さめ */
 @media(max-width:560px){
-  .hero-img{height:240px}
-  .hero-inner h2{font-size:22px}
-  .grid-6{grid-template-columns:1fr}
-  .gallery img{height:auto}
+  .hero-img{height:240px;}
+  .hero-inner h2{font-size:20px;}
+  .grid-6{grid-template-columns:1fr;}
 }
