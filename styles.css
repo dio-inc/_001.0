@@ -156,19 +156,17 @@ body{
   border-bottom:none;
 }
 
-/* =============== 事業内容カード（枠あり・grid-services対応） =============== */
+/* =============== 事業内容カード（横並び固定・枠あり） =============== */
 #services .grid-services{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr); /* 常に3列 */
+  gap:16px;
 }
 #services .grid-services .svc{
-  flex:1 1 calc(33.333% - 12px);
-  background:#fff;                   /* 背景白 */
-  padding:16px;                      /* 内側余白 */
+  background:#fff;               /* 背景白 */
+  padding:16px;                  /* 内側余白 */
   border-radius:8px;
-  border:2px solid #d8c9b8;         /* 枠を太めにして明確に */
-  box-shadow:none;                    /* 影は消す */
+  border:2px solid #d8c9b8;     /* 枠 */
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -242,9 +240,9 @@ body{
   }
   .nav-toggle{display:block}
 
-  /* カード縦並び */
-  .svc, .card{
-    flex:1 1 100%;
+  /* 他のカードも縦並びにしない */
+  .card{
+    flex:1 1 calc(33.333% - 12px);
   }
 }
 
