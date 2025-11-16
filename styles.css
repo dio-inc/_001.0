@@ -151,19 +151,20 @@ body{
 }
 
 /* =============== サービス内容・カード類 =============== */
+/* 事業内容のカードの余白を少し狭める */
 #services .grid,
 #reasons .cards,
 #reviews .cards{
   display:flex;
   flex-wrap:wrap;
-  gap:16px;
+  gap:12px;  /* 以前16pxから12pxに変更 */
 }
 
 .svc, .card{
   background:#fff;
-  padding:16px;
+  padding:12px;           /* 以前16pxから12pxに変更 */
   border-radius:8px;
-  flex:1 1 calc(33.333% - 16px);
+  flex:1 1 calc(33.333% - 12px);
   box-shadow:0 2px 4px rgba(0,0,0,0.05);
 }
 
@@ -186,18 +187,27 @@ body{
   border-radius:6px;
 }
 
-/* =============== レスポンシブ =============== */
+/* =============== ハンバーガーメニュー修正 =============== */
 @media(max-width:900px){
-  .nav{display:none}
-  .nav.open{
-    display:block;
+  .nav{
+    display:none;
+    flex-direction:column;  /* 縦に並べる */
+    width:100%;
     background:#fff;
-    padding:10px 0;
+    padding:0;
     border-top:1px solid #e6e6e6;
+    position:absolute;
+    top:100%;  /* ヘッダーの下に表示 */
+    left:0;
+    z-index:49;
+  }
+  .nav.open{
+    display:flex;  /* flexで縦に展開 */
   }
   .nav a{
     display:block;
     padding:12px 20px;
+    border-bottom:1px solid #e6e6e6;
   }
   .nav-toggle{display:block}
 
@@ -206,6 +216,7 @@ body{
   }
 }
 
+/* =============== レスポンシブ小画面 =============== */
 @media(max-width:560px){
   .brand h1{font-size:26px}
   .hero-img{height:240px}
