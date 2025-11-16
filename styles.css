@@ -108,13 +108,13 @@ body{
   gap:16px;
 }
 #materials .svc img{
-  width:200px;        /* 小さめ */
+  width:200px;
   max-width:250px;
   height:auto;
   object-fit:cover;
   border-radius:8px;
   display:block;
-  margin:0 auto;      /* 中央寄せ */
+  margin:0 auto;
 }
 
 /* =============== 会社概要（枠維持） =============== */
@@ -151,21 +151,30 @@ body{
 }
 
 /* =============== サービス内容・カード類 =============== */
-/* 事業内容のカードの余白を少し狭める */
 #services .grid,
 #reasons .cards,
 #reviews .cards{
   display:flex;
   flex-wrap:wrap;
-  gap:12px;  /* 以前16pxから12pxに変更 */
+  gap:12px; /* カード間のgapを少し狭める */
 }
 
 .svc, .card{
   background:#fff;
-  padding:12px;           /* 以前16pxから12pxに変更 */
+  padding:12px; /* カード内paddingも狭める */
   border-radius:8px;
   flex:1 1 calc(33.333% - 12px);
   box-shadow:0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* カード内テキストのマージン調整 */
+.svc h4, .card h4{
+  margin-top:0;
+  margin-bottom:8px;
+}
+.svc p, .card p{
+  margin-top:0;
+  margin-bottom:8px;
 }
 
 /* =============== お問い合わせフォーム調整 =============== */
@@ -191,18 +200,18 @@ body{
 @media(max-width:900px){
   .nav{
     display:none;
-    flex-direction:column;  /* 縦に並べる */
+    flex-direction:column;
     width:100%;
     background:#fff;
     padding:0;
     border-top:1px solid #e6e6e6;
     position:absolute;
-    top:100%;  /* ヘッダーの下に表示 */
+    top:100%;
     left:0;
     z-index:49;
   }
   .nav.open{
-    display:flex;  /* flexで縦に展開 */
+    display:flex;
   }
   .nav a{
     display:block;
