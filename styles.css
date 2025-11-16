@@ -102,18 +102,18 @@ body{
   border-radius:8px;
 }
 
-/* 床材紹介の写真（2枚目以降） */
-.gallery img:not(:first-child) {
-  width:50%;        /* 施工写真より小さく */
-  max-width:250px;  /* 任意で最大幅 */
-  height:auto;      /* 縦横比を維持 */
+/* 床材紹介の画像 */
+.gallery img.floor {
+  width:200px;        /* 小さめ */
+  max-width:250px;
+  height:auto;        /* 縦横比維持 */
   object-fit:cover;
   border-radius:8px;
   display:block;
-  margin:0 auto;    /* 中央寄せ */
+  margin:0 auto;      /* 中央寄せ */
 }
 
-/* =============== 会社概要（枠復活） =============== */
+/* =============== 会社概要（枠維持） =============== */
 .company{
   background:var(--sub);
   padding:24px;
@@ -171,9 +171,9 @@ body{
   .brand h1{font-size:26px}
   .hero-img{height:240px}
 
-  /* 床材紹介写真をスマホでも小さく維持 */
-  .gallery img:not(:first-child) {
-    width:70%;        /* 画面幅に合わせて調整 */
+  /* 床材紹介画像をスマホでも小さめに維持 */
+  .gallery img.floor {
+    width:70%;
     max-width:200px;
   }
 }
