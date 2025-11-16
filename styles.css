@@ -108,61 +108,59 @@ body{
   gap:16px;
 }
 #materials .svc img{
-  width:200px;        /* 小さめ */
+  width:200px;
   max-width:250px;
   height:auto;
   object-fit:cover;
   border-radius:8px;
   display:block;
-  margin:0 auto;      /* 中央寄せ */
+  margin:0 auto;
 }
 
-/* =============== 会社概要（枠維持） =============== */
-.company{
-  background:var(--sub);
-  padding:24px;
-  border-radius:8px;
-}
-
-.profile{
-  width:100%;
-  border-collapse:collapse;
+/* =============== 会社概要（枠復活） =============== */
+.company-card {
   background:#fff;
   border:1px solid #d8c9b8;
   border-radius:8px;
+  padding:16px;
+  max-width:700px;
+  margin:0 auto 24px auto;
+  box-shadow:0 2px 4px rgba(0,0,0,0.05);
 }
 
-.profile th,
-.profile td{
+.company-card .row {
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
   border-bottom:1px solid #e6e6e6;
-  padding:12px 16px;
-  text-align:left;
 }
 
-.profile th{
-  width:140px;
-  color:var(--text);
-  font-weight:bold;
-}
-
-.profile tr:last-child th,
-.profile tr:last-child td{
+.company-card .row:last-child {
   border-bottom:none;
 }
 
-/* =============== サービス内容・カード類 =============== */
-/* 事業内容のカードの余白を少し狭める */
+.company-card .label {
+  font-weight:bold;
+  color:var(--text);
+}
+
+/* =============== 事業内容・カード類 =============== */
+#services h3 {
+  margin-top:0;   /* 上の余白を削減 */
+  margin-bottom:16px;
+}
+
 #services .grid,
 #reasons .cards,
 #reviews .cards{
   display:flex;
   flex-wrap:wrap;
-  gap:12px;  /* 以前16pxから12pxに変更 */
+  gap:12px;
 }
 
 .svc, .card{
   background:#fff;
-  padding:12px;           /* 以前16pxから12pxに変更 */
+  padding:12px;
   border-radius:8px;
   flex:1 1 calc(33.333% - 12px);
   box-shadow:0 2px 4px rgba(0,0,0,0.05);
@@ -191,18 +189,18 @@ body{
 @media(max-width:900px){
   .nav{
     display:none;
-    flex-direction:column;  /* 縦に並べる */
+    flex-direction:column;
     width:100%;
     background:#fff;
     padding:0;
     border-top:1px solid #e6e6e6;
     position:absolute;
-    top:100%;  /* ヘッダーの下に表示 */
+    top:100%;
     left:0;
     z-index:49;
   }
   .nav.open{
-    display:flex;  /* flexで縦に展開 */
+    display:flex;
   }
   .nav a{
     display:block;
