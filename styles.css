@@ -117,37 +117,14 @@ body{
   margin:0 auto;
 }
 
-/* =============== 会社概要（枠復活） =============== */
-.company-card {
-  background:#fff;
-  border:1px solid #d8c9b8;
-  border-radius:8px;
-  padding:16px;
-  max-width:700px;
-  margin:0 auto 24px auto;
-  box-shadow:0 2px 4px rgba(0,0,0,0.05);
+/* =============== 事業内容（カード上の隙間調整） =============== */
+#services {
+  padding-top:16px; /* 元の24pxから少し減らす */
 }
 
-.company-card .row {
-  display:flex;
-  justify-content:space-between;
-  padding:8px 0;
-  border-bottom:1px solid #e6e6e6;
-}
-
-.company-card .row:last-child {
-  border-bottom:none;
-}
-
-.company-card .label {
-  font-weight:bold;
-  color:var(--text);
-}
-
-/* =============== 事業内容・カード類 =============== */
 #services h3 {
-  margin-top:0;   /* 上の余白を削減 */
-  margin-bottom:16px;
+  margin-top:0;
+  margin-bottom:12px;
 }
 
 #services .grid,
@@ -164,6 +141,48 @@ body{
   border-radius:8px;
   flex:1 1 calc(33.333% - 12px);
   box-shadow:0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* =============== 会社概要（枠復活・テーブル風） =============== */
+.company {
+  background:var(--sub);
+  padding:24px;
+  border-radius:8px;
+}
+
+.company-card {
+  width:100%;
+  max-width:700px;
+  margin:0 auto;
+  border:1px solid #d8c9b8;
+  border-radius:8px;
+  background:#fff;
+  overflow:hidden;
+}
+
+.company-card .row {
+  display:table;
+  width:100%;
+  table-layout:fixed;
+  border-bottom:1px solid #e6e6e6;
+  padding:0;
+}
+
+.company-card .row > .label,
+.company-card .row > .value {
+  display:table-cell;
+  padding:12px 16px;
+  vertical-align:middle;
+}
+
+.company-card .label {
+  font-weight:bold;
+  width:140px;
+  color:var(--text);
+}
+
+.company-card .row:last-child {
+  border-bottom:none;
 }
 
 /* =============== お問い合わせフォーム調整 =============== */
