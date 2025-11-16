@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>株式会社DIO</title>
+<style>
+:root{
+  --main:#D7B894;
+  --accent:#7A5A3D;
+  --text:#3B2F2A;
+  --bg:#FDF8F2;
+  --btn-hover:#A57A5A;
+}
+body{margin:0;font-family:'Noto Sans JP',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;}
+header{background:#fff;padding:14px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+header h1{font-size:28px;color:var(--main);margin:0;font-weight:bold;}
+nav a{margin-left:8px;text-decoration:none;color:var(--text);font-weight:600;}
+nav a.btn{background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:bold;box-shadow:0 3px 6px rgba(0,0,0,0.2);}
+nav a.btn:hover{background:var(--btn-hover);}
+section{padding:24px 16px;display:none;}
+section.active{display:block;}
+.hero{position:relative;height:240px;margin-bottom:20px;border-radius:12px;overflow:hidden;box-shadow:0 4px 8px rgba(0,0,0,0.15);}
+.hero img{width:100%;height:100%;object-fit:cover;filter:brightness(0.35);}
+.hero-inner{position:absolute;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;padding:16px;}
+.hero-inner h2{font-size:24px;margin-bottom:12px;text-shadow:0 2px 6px rgba(0,0,0,0.6);}
+.hero-inner p{margin-bottom:16px;text-shadow:0 1px 4px rgba(0,0,0,0.5);}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;background:var(--main);color:var(--text);text-decoration:none;margin:4px;font-weight:bold;box-shadow:0 3px 6px rgba(0,0,0,0.2);}
+.btn:hover{background:var(--accent);color:#fff;}
+.gallery img{width:100%;margin-bottom:14px;border-radius:10px;box-shadow:0 2px 6px rgba(0,0,0,0.2);}
+table{width:100%;border-collapse:collapse;margin-top:12px;}
+th,td{padding:10px;text-align:left;border-bottom:1px solid #ccc;}
+form label{display:block;margin-bottom:16px;font-weight:bold;}
+input,textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ccc;margin-top:6px;font-size:16px;}
+button{background:var(--accent);color:#fff;padding:12px 18px;border:none;border-radius:10px;font-size:16px;font-weight:bold;margin-top:8px;cursor:pointer;box-shadow:0 3px 6px rgba(0,0,0,0.2);}
+button:hover{background:var(--btn-hover);}
+footer{background:var(--accent);color:#fff;text-align:center;padding:16px 0;margin-top:20px;font-weight:bold;font-size:16px;}
+ul{padding-left:20px;margin-top:12px;}
+li{margin-bottom:10px;font-size:16px;}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>株式会社DIO</h1>
+  <nav>
+    <a href="#" onclick="showSection('top')">トップ</a>
+    <a href="#" onclick="showSection('services')">サービス</a>
+    <a href="#" onclick="showSection('works')">施工実績</a>
+    <a href="#" onclick="showSection('company')">会社概要</a>
+    <a href="#" onclick="showSection('contact')" class="btn">お問い合わせ</a>
+  </nav>
+</header>
+
+<main>
+  <!-- トップページ -->
+  <section id="top" class="active">
+    <div class="hero">
+      <img src="https://via.placeholder.com/800x240.png?text=床施工" alt="床施工">
+      <div class="hero-inner">
+        <h2>確かな技術で仕上げる、床仕上げのプロフェッショナル</h2>
+        <p>商業施設・オフィス・店舗・個人宅まで、丁寧な施工と美しい仕上がりをお届けします</p>
+        <a class="btn" href="tel:08072554114">📞 電話する</a>
+        <a class="btn" href="#contact" onclick="showSection('contact')">✉️ 無料見積もり</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- サービス -->
+  <section id="services">
+    <h2>サービス内容</h2>
+    <ul>
+      <li>フロアタイル施工</li>
+      <li>カーペット施工</li>
+      <li>ノンスリップシート</li>
+      <li>長尺階段シート</li>
+      <li>巾木施工</li>
+      <li>張り替え・リフォーム全般</li>
+    </ul>
+  </section>
+
+  <!-- 施工実績 -->
+  <section id="works">
+    <h2>施工実績</h2>
+    <div class="gallery">
+      <img src="https://via.placeholder.com/800x150.png?text=施工例1" alt="施工例1">
+      <img src="https://via.placeholder.com/800x150.png?text=施工例2" alt="施工例2">
+      <img src="https://via.placeholder.com/800x150.png?text=施工例3" alt="施工例3">
+    </div>
+  </section>
+
+  <!-- 会社概要 -->
+  <section id="company">
+    <h2>会社概要</h2>
+    <table>
+      <tr><th>会社名</th><td>株式会社DIO</td></tr>
+      <tr><th>所在地</th><td>大阪府大阪市</td></tr>
+      <tr><th>代表</th><td>清水 彬夢</td></tr>
+      <tr><th>事業内容</th><td>床仕上げ工事全般（タイル・カーペット・シート等）</td></tr>
+      <tr><th>対応エリア</th><td>大阪府中心に近畿一円</td></tr>
+    </table>
+  </section>
+
+  <!-- お問い合わせ -->
+  <section id="contact">
+    <h2>お問い合わせ</h2>
+    <form action="mailto:dio.inc.com@gmail.com" method="post" enctype="text/plain">
+      <label>お名前（必須）<input type="text" name="name" required></label>
+      <label>電話番号（必須）<input type="tel" name="phone" required></label>
+      <label>現場住所<input type="text" name="address"></label>
+      <label>ご相談内容<textarea name="message" rows="5"></textarea></label>
+      <button type="submit">送信する</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>株式会社DIO</p>
+</footer>
+
+<script>
+function showSection(id){
+  document.querySelectorAll('main section').forEach(s => s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0,0);
+}
+</script>
+
+</body>
+</html>
