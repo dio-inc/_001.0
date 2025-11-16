@@ -34,7 +34,7 @@ body{
 }
 .brand h1{
   margin:8px 0 0;
-  font-size:32px;   /* ← 大きく */
+  font-size:32px;
   font-weight:bold;
   color:var(--main);
 }
@@ -87,17 +87,30 @@ body{
   color:#fff;
 }
 
-/* =============== 施工実績 =============== */
+/* =============== 施工実績・床材紹介 =============== */
 .gallery{
   display:grid;
   grid-template-columns:1fr;
   gap:20px;
 }
-.gallery img{
+
+/* 施工写真（最初の画像） */
+.gallery img:first-child {
   width:100%;
   height:300px;
   object-fit:cover;
   border-radius:8px;
+}
+
+/* 床材紹介の写真（2枚目以降） */
+.gallery img:not(:first-child) {
+  width:50%;        /* 施工写真より小さく */
+  max-width:250px;  /* 任意で最大幅 */
+  height:auto;      /* 縦横比を維持 */
+  object-fit:cover;
+  border-radius:8px;
+  display:block;
+  margin:0 auto;    /* 中央寄せ */
 }
 
 /* =============== 会社概要（枠復活） =============== */
@@ -110,14 +123,14 @@ body{
 .profile{
   width:100%;
   border-collapse:collapse;
-  background:#fff;               /* ← 白背景で見やすく */
-  border:1px solid #d8c9b8;      /* ← 外枠復活！ */
+  background:#fff;
+  border:1px solid #d8c9b8;
   border-radius:8px;
 }
 
 .profile th,
 .profile td{
-  border-bottom:1px solid #e6e6e6;   /* ← 行の区切り線復活！ */
+  border-bottom:1px solid #e6e6e6;
   padding:12px 16px;
   text-align:left;
 }
@@ -135,9 +148,10 @@ body{
 
 /* =============== お問い合わせ余白調整 =============== */
 .contact p{
-  padding-left:12px; /* ← 左に少し余白追加 */
+  padding-left:12px;
 }
 
+/* =============== レスポンシブ =============== */
 @media(max-width:900px){
   .nav{display:none}
   .nav.open{
@@ -148,7 +162,7 @@ body{
   }
   .nav a{
     display:block;
-    padding:12px 20px;   /* ← 横書きで下に出るメニュー */
+    padding:12px 20px;
   }
   .nav-toggle{display:block}
 }
@@ -156,4 +170,10 @@ body{
 @media(max-width:560px){
   .brand h1{font-size:26px}
   .hero-img{height:240px}
+
+  /* 床材紹介写真をスマホでも小さく維持 */
+  .gallery img:not(:first-child) {
+    width:70%;        /* 画面幅に合わせて調整 */
+    max-width:200px;
+  }
 }
