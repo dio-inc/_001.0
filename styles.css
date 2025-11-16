@@ -102,8 +102,13 @@ body{
 }
 
 /* =============== 床材紹介 =============== */
+#materials .grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+}
 #materials .svc img{
-  width:200px;        /* 施工写真より小さめ */
+  width:200px;        /* 小さめ */
   max-width:250px;
   height:auto;
   object-fit:cover;
@@ -145,8 +150,10 @@ body{
   border-bottom:none;
 }
 
-/* =============== サービス内容、カード類 =============== */
-.cards, .grid{
+/* =============== サービス内容・カード類 =============== */
+#services .grid,
+#reasons .cards,
+#reviews .cards{
   display:flex;
   flex-wrap:wrap;
   gap:16px;
@@ -160,9 +167,23 @@ body{
   box-shadow:0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* =============== お問い合わせ余白調整 =============== */
-.contact p{
-  padding-left:12px;
+/* =============== お問い合わせフォーム調整 =============== */
+.contact-form,
+.contact-note {
+  display:block;
+  margin:0 0 16px 0;
+  padding:0;
+}
+.contact-form label{
+  display:block;
+  margin-bottom:12px;
+}
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:8px;
+  border:1px solid #d8c9b8;
+  border-radius:6px;
 }
 
 /* =============== レスポンシブ =============== */
