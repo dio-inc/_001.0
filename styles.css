@@ -156,26 +156,26 @@ body{
   border-bottom:none;
 }
 
-/* =============== 事業内容カード（枠付き・見える仕様） =============== */
-#services .grid.grid-6{
+/* =============== 事業内容カード（枠あり・grid-services対応） =============== */
+#services .grid-services{
   display:flex;
   flex-wrap:wrap;
   gap:12px;
 }
-
-#services .grid.grid-6 .svc{
+#services .grid-services .svc{
   flex:1 1 calc(33.333% - 12px);
   background:#fff;                   /* 背景白 */
   padding:16px;                      /* 内側余白 */
   border-radius:8px;
   border:2px solid #d8c9b8;         /* 枠を太めにして明確に */
-  box-shadow:none;                    /* 影は消して枠を目立たせる */
+  box-shadow:none;                    /* 影は消す */
   display:flex;
   flex-direction:column;
+  align-items:center;
+  text-align:center;
 }
-
-#services .grid.grid-6 .svc h4,
-#services .grid.grid-6 .svc p{
+#services .grid-services .svc h4,
+#services .grid-services .svc p{
   margin-top:0;
   margin-bottom:8px;
 }
