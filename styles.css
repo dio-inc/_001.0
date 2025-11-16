@@ -160,12 +160,12 @@ body{
 #services .grid.grid-6{
   display:flex;
   flex-wrap:wrap;
-  gap:12px; /* カード間の隙間 */
+  gap:12px;
 }
 #services .grid.grid-6 .svc{
   flex:1 1 calc(33.333% - 12px);
   background:#fff;
-  padding:12px; /* 内側padding */
+  padding:12px;
   border-radius:8px;
   box-shadow:0 2px 4px rgba(0,0,0,0.05);
   display:flex;
