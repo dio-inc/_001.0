@@ -150,29 +150,47 @@ body{
   border-bottom:none;
 }
 
-/* =============== サービス内容・カード類 =============== */
-#services .grid,
+/* =============== サービス内容・事業内容カード調整 =============== */
+#services .grid{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px; /* カード間のgap */
+}
+#services .grid .svc{
+  background:#fff;
+  padding:12px; /* 内側paddingを狭める */
+  flex:1 1 calc(33.333% - 12px);
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.05);
+  display:flex;
+  flex-direction:column;
+}
+
+/* カード内テキストの余白調整 */
+#services .grid .svc h4{
+  margin-top:0;
+  margin-bottom:8px;
+}
+#services .grid .svc p{
+  margin-top:0;
+  margin-bottom:8px;
+}
+
+/* =============== 他のカード・レビュー =============== */
 #reasons .cards,
 #reviews .cards{
   display:flex;
   flex-wrap:wrap;
-  gap:12px; /* カード間のgapを少し狭める */
+  gap:12px;
 }
-
-.svc, .card{
+.card{
   background:#fff;
-  padding:12px; /* カード内paddingも狭める */
+  padding:12px;
   border-radius:8px;
   flex:1 1 calc(33.333% - 12px);
   box-shadow:0 2px 4px rgba(0,0,0,0.05);
 }
-
-/* カード内テキストのマージン調整 */
-.svc h4, .card h4{
-  margin-top:0;
-  margin-bottom:8px;
-}
-.svc p, .card p{
+.card h4, .card p{
   margin-top:0;
   margin-bottom:8px;
 }
@@ -220,6 +238,7 @@ body{
   }
   .nav-toggle{display:block}
 
+  /* カードを縦並びに */
   .svc, .card{
     flex:1 1 100%;
   }
