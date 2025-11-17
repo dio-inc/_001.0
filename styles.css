@@ -243,3 +243,58 @@ body{
     max-width:200px;
   }
 }
+/* ===================== ビフォーアフター ===================== */
+#beforeafter{
+  margin-top:40px;
+}
+
+.ba-list{
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+}
+
+.ba-item{
+  background:#fff;
+  padding:16px;
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.05);
+}
+
+.ba-images{
+  display:flex;
+  gap:16px;
+}
+
+.ba-box{
+  flex:1;
+  text-align:center;
+}
+
+.ba-box img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:8px;
+  border:1px solid #d8c9b8;
+}
+
+.ba-label{
+  font-weight:bold;
+  margin:0 0 8px;
+  color:var(--accent);
+}
+
+.ba-text{
+  margin-top:12px;
+  font-size:15px;
+  padding-left:4px;
+  border-left:4px solid var(--accent);
+}
+
+/* スマホで縦並び */
+@media(max-width:700px){
+  .ba-images{
+    flex-direction:column;
+  }
+}
