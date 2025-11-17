@@ -298,3 +298,56 @@ body{
     flex-direction:column;
   }
 }
+/* =============== 1日で終わる工事（スピードアピール） =============== */
+#fast-service { margin:36px auto; }
+#fast-service .fast-inner { text-align:center; max-width:1100px; margin:0 auto; }
+#fast-service h3 {
+  font-size:22px;
+  margin:0 0 8px;
+  color:var(--text);
+}
+#fast-service .fast-lead {
+  margin:0 0 18px;
+  color:rgba(75,58,42,0.85);
+}
+
+/* grid */
+#fast-service .fast-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:16px;
+  align-items:stretch;
+  margin-top:8px;
+}
+
+/* card */
+.fast-card{
+  background:#fff;
+  border:1px solid #e9dfcf;
+  border-radius:10px;
+  padding:18px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.04);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  min-height:200px;
+}
+.fast-card .fast-icon{ margin-bottom:12px; }
+.fast-card h4{
+  margin:0 0 8px;
+  color:var(--accent);
+  font-size:18px;
+}
+.fast-card p{ margin:0; color:rgba(75,58,42,0.8); font-size:14px; line-height:1.5; }
+
+/* CTA */
+.fast-cta{ margin-top:18px; }
+.fast-cta .btn.primary{ padding:10px 18px; border-radius:8px; }
+
+/* responsive */
+@media(max-width:900px){
+  #fast-service .fast-grid{ grid-template-columns:repeat(1, 1fr); }
+  .fast-card{ min-height:initial; text-align:left; align-items:flex-start; }
+  .fast-card .fast-icon{ margin-bottom:8px; }
+}
