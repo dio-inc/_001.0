@@ -27,13 +27,34 @@ body{
   top:0;
   z-index:50;
 }
+
+/* ヘッダーのフレックス調整 */
 .site-header .container{
   display:flex;
   align-items:center;
-  gap:16px;
+  gap:12px;
+}
+
+/* ★ ロゴ配置（高さ85pxで左ギリギリ） */
+.logo-box{
+  display:flex;
+  align-items:center;
+  margin-right:8px;
+}
+.logo-box img{
+  height:85px;
+  width:auto;
+  display:block;
+}
+
+/* 会社名エリア */
+.brand {
+  display:flex;
+  flex-direction:column;
+  line-height:1.2;
 }
 .brand h1{
-  margin:8px 0 0;
+  margin:0;
   font-size:32px;
   font-weight:bold;
   color:var(--main);
@@ -117,11 +138,10 @@ body{
   margin:0 auto;
 }
 
-/* =============== 事業内容（カード上の隙間調整） =============== */
+/* =============== 事業内容の隙間調整 =============== */
 #services {
-  padding-top:16px; /* 元の24pxから少し減らす */
+  padding-top:16px;
 }
-
 #services h3 {
   margin-top:0;
   margin-bottom:12px;
@@ -143,7 +163,7 @@ body{
   box-shadow:0 2px 4px rgba(0,0,0,0.05);
 }
 
-/* =============== 会社概要（枠復活・テーブル風） =============== */
+/* =============== 会社概要カード =============== */
 .company {
   background:var(--sub);
   padding:16px;
@@ -185,7 +205,7 @@ body{
   border-bottom:none;
 }
 
-/* =============== お問い合わせフォーム調整 =============== */
+/* =============== お問い合わせ =============== */
 .contact-form,
 .contact-note {
   display:block;
@@ -204,7 +224,7 @@ body{
   border-radius:6px;
 }
 
-/* =============== ハンバーガーメニュー修正 =============== */
+/* =============== ハンバーガーメニュー =============== */
 @media(max-width:900px){
   .nav{
     display:none;
@@ -231,19 +251,24 @@ body{
   .svc, .card{
     flex:1 1 100%;
   }
+
+  /* ロゴ縮小 */
+  .logo-box img{
+    height:60px;
+  }
 }
 
-/* =============== レスポンシブ小画面 =============== */
+/* =============== スマホ用 =============== */
 @media(max-width:560px){
   .brand h1{font-size:26px}
   .hero-img{height:240px}
-
   #materials .svc img{
     width:70%;
     max-width:200px;
   }
 }
-/* ===================== ビフォーアフター ===================== */
+
+/* ===================== BEFORE / AFTER ===================== */
 #beforeafter{
   margin-top:40px;
 }
@@ -292,13 +317,13 @@ body{
   border-left:4px solid var(--accent);
 }
 
-/* スマホで縦並び */
 @media(max-width:700px){
   .ba-images{
     flex-direction:column;
   }
 }
-/* =============== 1日で終わる工事（スピードアピール） =============== */
+
+/* =============== 1日で終わる工事 =============== */
 #fast-service { margin:36px auto; }
 #fast-service .fast-inner { text-align:center; max-width:1100px; margin:0 auto; }
 #fast-service h3 {
@@ -311,7 +336,6 @@ body{
   color:rgba(75,58,42,0.85);
 }
 
-/* grid */
 #fast-service .fast-grid {
   display:grid;
   grid-template-columns:repeat(3, 1fr);
@@ -320,7 +344,6 @@ body{
   margin-top:8px;
 }
 
-/* card */
 .fast-card{
   background:#fff;
   border:1px solid #e9dfcf;
@@ -341,11 +364,9 @@ body{
 }
 .fast-card p{ margin:0; color:rgba(75,58,42,0.8); font-size:14px; line-height:1.5; }
 
-/* CTA */
 .fast-cta{ margin-top:18px; }
 .fast-cta .btn.primary{ padding:10px 18px; border-radius:8px; }
 
-/* responsive */
 @media(max-width:900px){
   #fast-service .fast-grid{ grid-template-columns:repeat(1, 1fr); }
   .fast-card{ min-height:initial; text-align:left; align-items:flex-start; }
