@@ -42,7 +42,7 @@ body{
 }
 
 .brand img.site-logo{
-  height:32px; /* 会社名 h1 と同じ高さ */
+  height:48px; /* 会社名 h1 と同じ高さ */
   display:block;
 }
 
