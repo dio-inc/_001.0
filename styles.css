@@ -362,3 +362,15 @@ body{
     max-width:200px;
   }
 }
+/* =================== ブランドの左寄せ微調整 =================== */
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* ナビとの間隔はそのまま */
+  padding-left: 4px; /* 元の余白を少し減らして左端に寄せる */
+}
+
+/* ブランドだけ少し左に寄せる */
+.brand {
+  margin-left: 8px; /* ブランドが自然に左に寄る微調整 */
+}
