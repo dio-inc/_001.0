@@ -367,7 +367,7 @@ body{
   display: flex;
   align-items: center;
   justify-content: space-between; /* ナビとの間隔はそのまま */
-  padding-left: 3px; /* 元の余白を少し減らして左端に寄せる */
+  padding-left: 4px; /* 元の余白を少し減らして左端に寄せる */
 }
 
 /* ブランドだけ少し左に寄せる */
