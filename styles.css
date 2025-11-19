@@ -362,3 +362,7 @@ body{
     max-width:200px;
   }
 }
+/* ブランドを少し左に寄せる */
+.brand {
+  margin-left: 8px; /* ここで微調整 */
+}
