@@ -351,33 +351,3 @@ body{
   .fast-card{ min-height:initial; text-align:left; align-items:flex-start; }
   .fast-card .fast-icon{ margin-bottom:8px; }
 }
-.header-flex {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.brand-flex {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  text-decoration: none;
-  color: inherit;
-}
-
-.logo-img {
-  width: 48px;
-  height: auto;
-}
-
-.brand h1 {
-  font-size: 26px;
-  margin: 0;
-  color: var(--accent, #7A5A3D);
-}
-
-.brand .sub {
-  margin: 0;
-  font-size: 12px;
-  color: var(--text, #4B3A2A);
-}
