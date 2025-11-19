@@ -209,6 +209,105 @@ body{
   border-radius:6px;
 }
 
+/* =================== ビフォーアフター =================== */
+#beforeafter{
+  margin-top:40px;
+}
+
+.ba-list{
+  display:flex;
+  flex-direction:column;
+  gap:32px;
+}
+
+.ba-item{
+  background:#fff;
+  padding:16px;
+  border-radius:8px;
+  box-shadow:0 2px 4px rgba(0,0,0,0.05);
+}
+
+.ba-images{
+  display:flex;
+  gap:16px;
+}
+
+.ba-box{
+  flex:1;
+  text-align:center;
+}
+
+.ba-box img{
+  width:100%;
+  max-width:300px; /* 元サイトに近い横幅 */
+  height:200px;      /* 元サイトに近い高さ */
+  object-fit:cover;
+  border-radius:8px;
+  border:1px solid #d8c9b8;
+}
+
+.ba-label{
+  font-weight:bold;
+  margin:0 0 8px;
+  color:var(--accent);
+}
+
+.ba-text{
+  margin-top:12px;
+  font-size:15px;
+  padding-left:4px;
+  border-left:4px solid var(--accent);
+}
+
+/* =================== 1日で終わる工事 =================== */
+#fast-service { margin:36px auto; }
+#fast-service .fast-inner { text-align:center; max-width:1100px; margin:0 auto; }
+#fast-service h3 {
+  font-size:22px;
+  margin:0 0 8px;
+  color:var(--text);
+}
+#fast-service .fast-lead {
+  margin:0 0 18px;
+  color:rgba(75,58,42,0.85);
+}
+
+/* grid */
+#fast-service .fast-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:16px;
+  align-items:stretch;
+  margin-top:8px;
+}
+
+/* card */
+.fast-card{
+  background:#fff;
+  border:1px solid #e9dfcf; /* 枠を明示 */
+  border-radius:10px;
+  padding:18px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.04);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  min-height:200px;
+}
+
+.fast-card .fast-icon{ margin-bottom:12px; }
+.fast-card h4{
+  margin:0 0 8px;
+  color:var(--accent);
+  font-size:18px;
+}
+.fast-card p{
+  margin:0;
+  color:rgba(75,58,42,0.8);
+  font-size:14px;
+  line-height:1.5;
+}
+
 /* =================== ハンバーガーメニュー =================== */
 @media(max-width:900px){
   .nav{
@@ -241,6 +340,17 @@ body{
 @media(max-width:700px){
   .ba-images{
     flex-direction:column;
+  }
+  #fast-service .fast-grid{
+    grid-template-columns:1fr;
+  }
+  .fast-card{
+    min-height:auto;
+    text-align:left;
+    align-items:flex-start;
+  }
+  .fast-card .fast-icon{
+    margin-bottom:8px;
   }
 }
 
